@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{68B2A443-CE4B-D421-7744-21E5627EAC76}") = "BallsInHoles", "Assembly-CSharp.csproj", "{410A1377-0D20-F314-D2D4-69DEC4106948}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{410A1377-0D20-F314-D2D4-69DEC4106948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410A1377-0D20-F314-D2D4-69DEC4106948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410A1377-0D20-F314-D2D4-69DEC4106948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410A1377-0D20-F314-D2D4-69DEC4106948}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
