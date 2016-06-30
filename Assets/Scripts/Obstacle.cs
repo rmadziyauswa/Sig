@@ -19,7 +19,7 @@ public class Obstacle : MonoBehaviour {
         {
             //the ball has reached the finish red hole. The Player Has won
 
-            Debug.Log("WINNER!!!");
+            //Debug.Log("WINNER!!!");
 
             return;
         }
@@ -27,7 +27,7 @@ public class Obstacle : MonoBehaviour {
         if(colliderTag.Equals("Player"))
         {
             //the player has hit an obstacle
-            Debug.Log("HIT!!!");
+            //Debug.Log("HIT!!!");
 
         }
     }

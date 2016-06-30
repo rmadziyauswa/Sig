@@ -12,10 +12,18 @@ public class BallMovement : MonoBehaviour {
     }
 
     public float magnetStrength = 0.5f;
+    public float currentMagnetStrength = 0.0f;
+    public float magnetStrengthIncreaseFactor = 0.2f; //the amount used to increase the magnets power
+
+
     public BallDirection ballDirection = BallDirection.Up;
     public float ballSpeed = 4.0f;
     public bool isDead = false;
     public bool hasReachedDestination = false;
+
+
+    private float halfScreenWidth = 0;
+
 
     public Vector2 externalForce = Vector2.zero;
 
@@ -28,6 +36,8 @@ public class BallMovement : MonoBehaviour {
 	void Start () {
 
         rigidBody2d = this.GetComponent<Rigidbody2D>();
+
+        halfScreenWidth = Screen.width / 2;
         
 
 	}
@@ -85,7 +95,39 @@ public class BallMovement : MonoBehaviour {
 
     public void HandleInput()
     {
-        var inX = Input.GetAxis("Horizontal") * magnetStrength;
+        float inX = Input.GetAxis("Horizontal") * magnetStrength;
+
+        float mouseClickPosition = 0;
+
+        if(Input.GetMouseButton(0))
+        {
+            mouseClickPosition = Input.mousePosition.x;
+
+            if(mouseClickPosition > halfScreenWidth)
+            {
+                //right side clicked
+                
+                //currentMagnetStrength += magnetStrengthIncreaseFactor;
+                currentMagnetStrength = Mathf.Clamp( currentMagnetStrength + magnetStrengthIncreaseFactor,0f, 0.6f);
+                inX = currentMagnetStrength * magnetStrength;
+            }
+            else
+            {
+                //left side clicked
+                
+
+                currentMagnetStrength = Mathf.Clamp(currentMagnetStrength + magnetStrengthIncreaseFactor, 0f, 0.6f);
+                inX = - currentMagnetStrength * magnetStrength;
+
+
+            }
+
+        }
+        else
+        {
+            currentMagnetStrength = 0.0f;
+
+        }
 
         
         Vector2 applyForce = new Vector2(inX, 0);
