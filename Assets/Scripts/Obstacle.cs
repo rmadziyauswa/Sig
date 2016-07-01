@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Obstacle : MonoBehaviour {
 
@@ -20,6 +21,7 @@ public class Obstacle : MonoBehaviour {
             //the ball has reached the finish red hole. The Player Has won
 
             //Debug.Log("WINNER!!!");
+            SceneManager.LoadScene("Menu");
 
             return;
         }
@@ -28,6 +30,8 @@ public class Obstacle : MonoBehaviour {
         {
             //the player has hit an obstacle
             //Debug.Log("HIT!!!");
+
+            SceneManager.LoadScene("gameOver");
 
         }
     }
